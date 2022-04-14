@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#53A2BE">
+
+    <ImageView
+        android:id="@+id/heartImg"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/heart"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <GridLayout
+        android:id="@+id/asks"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/heartImg"
+        android:rowCount="5"
+        android:columnCount="2">
+        <TextView
+            android:text="Введите Ваше давление"
+            android:textColor="@color/white"
+            android:textSize="19dp"/>
+        <EditText
+            android:id="@+id/bp"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textSize="19dp"/>
+        <TextView
+            android:text="Есть ли у Вас головная боль?"
+            android:textColor="@color/white"
+            android:textSize="19dp"/>
+        <RadioGroup
+            android:id="@+id/hd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selection"
+            >
+            <RadioButton android:id="@+id/yhd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Да"
+                android:textColor="@color/white"
+                android:onClick="onBtnHdClick"/>
+            <RadioButton android:id="@+id/nhd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нет"
+                android:textColor="@color/white"
+                android:onClick="onBtnHdClick"/>
+        </RadioGroup>
+        <TextView
+            android:text="Введите Ваш возраст"
+            android:textColor="@color/white"
+            android:textSize="19dp"/>
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textSize="19dp"/>
+        <TextView
+            android:text="Курите ли Вы?"
+            android:textColor="@color/white"
+            android:textSize="19dp"/>
+        <RadioGroup
+            android:id="@+id/smoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selection"
+            >
+            <RadioButton android:id="@+id/ysmoke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Да"
+                android:textColor="@color/white"
+                android:onClick="onBtnSmClick"/>
+            <RadioButton android:id="@+id/nsmoke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нет"
+                android:textColor="@color/white"
+                android:onClick="onBtnSmClick"/>
+        </RadioGroup>
+        <TextView
+            android:text="Введите Ваш пульс"
+            android:textColor="@color/white"
+            android:textSize="19dp"/>
+        <EditText
+            android:id="@+id/pulse"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textSize="19dp"/>
+    </GridLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/res_btn"
+        android:text="Узнать результат"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#2A2E45"
+        app:layout_constraintTop_toBottomOf="@id/asks"
+        android:layout_height="100dp"
+        android:layout_width="300dp"
+        android:layout_marginTop="50dp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="getRes"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
