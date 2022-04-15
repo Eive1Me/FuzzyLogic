@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
     public void getRes(View view){
         try {
             ArrayList<Rules> rules = genRules();
-            double[] b = Fuzzifier.fuzzi(rules, Integer.valueOf(BP.getText().toString()), hd, Integer.valueOf(A.getText().toString()), sm, Integer.valueOf(HB.getText().toString()));
-            double[] c = Aggregator.aggregate(b);
+            ArrayList<Double> b = Fuzzifier.fuzzi(rules, Integer.valueOf(BP.getText().toString()), hd, Integer.valueOf(A.getText().toString()), sm, Integer.valueOf(HB.getText().toString()));
+            ArrayList<Double> c = Aggregator.aggregate(b);
             double defRes = Defuzzifier.defuzzi(c, rules);
 
             Intent intent = new Intent(this, ResultActivity.class);

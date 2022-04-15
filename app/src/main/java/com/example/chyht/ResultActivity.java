@@ -9,7 +9,11 @@ import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
-    String data = "       0 - гипертонии нет\n 1 - скорее всего гипертонии нет\n  2 - 50/50, обратитесь к врачу\n3 - скорее всего у Вас гипертония\n      4 - у Вас гипертония";
+    String data = "0 - гипертонии нет\n" +
+                  "1 - скорее всего гипертонии нет\n" +
+                  "2 - 50/50, обратитесь к врачу\n" +
+                  "3 - скорее всего у Вас гипертония\n" +
+                  "4 - у Вас гипертония";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
