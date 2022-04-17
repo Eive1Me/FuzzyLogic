@@ -74,8 +74,16 @@ public class MainActivity extends AppCompatActivity {
             ArrayList<Double> c = Aggregator.aggregate(b);
             double defRes = Defuzzifier.defuzzi(c, rules);
 
+            ArrayList<Double> badRes = new ArrayList<>();
+            badRes.add(Perems.BP_high(Integer.valueOf(BP.getText().toString())));
+            badRes.add(Perems.H_yes(hd));
+            badRes.add(Perems.A_old(Integer.valueOf(A.getText().toString())));
+            badRes.add(Perems.SM_yes(sm));
+            badRes.add(Perems.HB_high(Integer.valueOf(HB.getText().toString())));
+
             Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("result", defRes);
+            intent.putExtra("points", badRes);
             startActivity(intent);
         }catch (Exception e){
             Toast toast = Toast.makeText(getApplicationContext(),
