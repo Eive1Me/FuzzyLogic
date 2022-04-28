@@ -31,9 +31,10 @@ public class ResultActivity extends AppCompatActivity {
         Bundle arguments = getIntent().getExtras();
 
         TextView hello = findViewById(R.id.yourres);
-        hello.setText(arguments.get("result").toString());
-//        TextView txtRes = findViewById(R.id.txtRes);
-//        txtRes.setText(data);
+        double value = (double) arguments.get("result");
+        double scale = Math.pow(10, 3);
+        double result = Math.ceil(value * scale) / scale;
+        hello.setText(String.valueOf(result));
 
         TextView textRes = findViewById(R.id.textRes);
         Double doRes = Double.parseDouble(arguments.get("result").toString());
