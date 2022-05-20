@@ -4,120 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#53A2BE">
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/heartImg"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+    <EditText
+        android:id="@+id/HumidTv"
+        android:layout_width="163dp"
+        android:layout_height="42dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/heart"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/TempTv"
+        app:layout_constraintVertical_bias="0.271" />
 
-    <GridLayout
-        android:id="@+id/asks"
-        android:layout_marginLeft="10dp"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/TempTv"
+        android:layout_width="163dp"
+        android:layout_height="42dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/heartImg"
-        android:rowCount="5"
-        android:columnCount="2">
-        <TextView
-            android:text="Введите Ваше давление"
-            android:textColor="@color/white"
-            android:textSize="19dp"/>
-        <EditText
-            android:id="@+id/bp"
-            android:layout_width="match_parent"
-            android:textColor="@color/white"
-            android:textSize="19dp"/>
-        <TextView
-            android:text="Есть ли у Вас головная боль?"
-            android:textColor="@color/white"
-            android:textSize="19dp"/>
-        <RadioGroup
-            android:id="@+id/hd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/selection"
-            >
-            <RadioButton android:id="@+id/yhd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Да"
-                android:textColor="@color/white"
-                android:onClick="onBtnHdClick"/>
-            <RadioButton android:id="@+id/nhd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Нет"
-                android:textColor="@color/white"
-                android:onClick="onBtnHdClick"/>
-        </RadioGroup>
-        <TextView
-            android:text="Введите Ваш возраст"
-            android:textColor="@color/white"
-            android:textSize="19dp"/>
-        <EditText
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:textColor="@color/white"
-            android:textSize="19dp"/>
-        <TextView
-            android:text="Курите ли Вы?"
-            android:textColor="@color/white"
-            android:textSize="19dp"/>
-        <RadioGroup
-            android:id="@+id/smoke"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/selection"
-            >
-            <RadioButton android:id="@+id/ysmoke"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Да"
-                android:textColor="@color/white"
-                android:onClick="onBtnSmClick"/>
-            <RadioButton android:id="@+id/nsmoke"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Нет"
-                android:textColor="@color/white"
-                android:onClick="onBtnSmClick"/>
-        </RadioGroup>
-        <TextView
-            android:text="Введите Ваш пульс"
-            android:textColor="@color/white"
-            android:textSize="19dp"/>
-        <EditText
-            android:id="@+id/pulse"
-            android:layout_width="match_parent"
-            android:textColor="@color/white"
-            android:textSize="19dp"/>
-    </GridLayout>
+        android:onClick="getResult"
+        android:text="Включить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HumidTv" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/res_btn"
-        android:text="Узнать результат"
-        android:textSize="30dp"
-        android:textColor="@color/white"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#2A2E45"
-        app:layout_constraintTop_toBottomOf="@id/asks"
-        android:layout_height="100dp"
-        android:layout_width="300dp"
-        android:layout_marginTop="50dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Включаем вентилятор"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/TempTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:onClick="getRes"/>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Введите данные для подсчета скорости"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Температура"
+        app:layout_constraintBottom_toTopOf="@+id/TempTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Влажность"
+        app:layout_constraintBottom_toTopOf="@+id/HumidTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
