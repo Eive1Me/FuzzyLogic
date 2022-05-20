@@ -1,6 +1,6 @@
 package com.example.fuzzylog;
 
-public class PrinadFunc {
+public class MemberFunction {
 
     public static double left(double a, double b, int x){
         if (x<=a){

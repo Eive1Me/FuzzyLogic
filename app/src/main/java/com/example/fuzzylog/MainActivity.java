@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void getResult(View view){
         try {
-            ArrayList<Rules> rules = Rules.genRules();
+            ArrayList<Rules> rules = Rules.generateRules();
             ArrayList<Double> b = Fuzzifier.fuzzy(rules, Integer.parseInt(TempTv.getText().toString()), Integer.parseInt(HumidTv.getText().toString()));
             ArrayList<Double> c = Aggregator.aggregate(b);
             double defRes = Defuzzifier.defuzzy(c, rules);

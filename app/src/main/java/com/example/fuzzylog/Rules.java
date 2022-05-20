@@ -40,7 +40,7 @@ public class Rules {
         return this.Res;
     }
 
-    public static ArrayList<Rules> genRules(){
+    public static ArrayList<Rules> generateRules(){
         ArrayList<Rules> rules = new ArrayList<Rules>();
 
         rules.add(new Rules("Cold", "Dry", Val.R_slow()));
