@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.chyht"
+        applicationId "com.example.fuzzylog"
         minSdk 21
         targetSdk 31
         versionCode 1

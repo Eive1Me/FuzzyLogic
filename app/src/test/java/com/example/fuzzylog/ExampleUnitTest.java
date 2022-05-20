@@ -1,4 +1,4 @@
-package com.example.chyht;
+package com.example.fuzzylog;
 
 import org.junit.Test;
 
